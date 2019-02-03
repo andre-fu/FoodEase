@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | FoodEase</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900" rel="stylesheet">
+</head>
+
+<body>
+  <script>
+    async function main() {
+        console.log('hello')
+        let results = await fetch('http://localhost:5000/', {
+            method: 'GET'
+        }).then(res => res.json())
+        console.log(results)
+
+        document.getElementById('item1').innerHTML = results[0]['ingredient']
+        document.getElementById('item2').innerHTML = results[1]['ingredient']
+        document.getElementById('item3').innerHTML = results[2]['ingredient']
+        document.getElementById('item4').innerHTML = results[3]['ingredient']
+        document.getElementById('item5').innerHTML = results[4]['ingredient']
+
+        document.getElementById('name1').innerHTML = results[0]['recipe']
+        document.getElementById('name2').innerHTML = results[1]['recipe']
+        document.getElementById('name3').innerHTML = results[2]['recipe']
+        document.getElementById('name4').innerHTML = results[3]['recipe']
+        document.getElementById('name5').innerHTML = results[4]['recipe']
+
+        document.getElementById('time1').innerHTML = results[0]['time']
+        document.getElementById('time2').innerHTML = results[1]['time']
+        document.getElementById('time3').innerHTML = results[2]['time']
+        document.getElementById('time4').innerHTML = results[3]['time']
+        document.getElementById('time5').innerHTML = results[4]['time']
+
+        document.getElementById('calories1').innerHTML = results[0]['cals']
+        document.getElementById('calories2').innerHTML = results[1]['cals']
+        document.getElementById('calories3').innerHTML = results[2]['cals']
+        document.getElementById('calories4').innerHTML = results[3]['cals']
+        document.getElementById('calories5').innerHTML = results[4]['cals']
+
+        document.getElementById('fats1').innerHTML = results[0]['health']
+        document.getElementById('fats2').innerHTML = results[1]['health']
+        document.getElementById('fats3').innerHTML = results[2]['health']
+        document.getElementById('fats4').innerHTML = results[3]['health']
+        document.getElementById('fats5').innerHTML = results[4]['health']
+
+        document.getElementById('link1').innerHTML = results[0]['link']
+        document.getElementById('link2').innerHTML = results[1]['link']
+        document.getElementById('link3').innerHTML = results[2]['link']
+        document.getElementById('link4').innerHTML = results[3]['link']
+        document.getElementById('link5').innerHTML = results[4]['link'] 
+
+        document.getElementById('food-img1').src = results[0]['img']
+        document.getElementById('food-img2').src = results[1]['img']
+        document.getElementById('food-img3').src = results[2]['img']
+        document.getElementById('food-img4').src = results[3]['img']
+        document.getElementById('food-img5').src = results[4]['img']
+
+    }
+    main()
+</script>
+
+  <section>
+    <div class="top-bar">
+      <img src="../Main/images/foodease_logo.png" class="logo" alt="logo">
+    </div>
+  </section>
+  <div>
+    <div class="row">
+      <div class="column left">
+        <h2>Upload Image</h2>
+        <div class="upload-btn-wrapper">
+          <input type="file" name="myfile" />
+        </div>
+      </div>
+      <div class="column right">
+        <h2>Ingredients:</h2>
+        <ul>
+          <li id="item1">{Add Ingredient}</li>
+          <li id="item2">{Add Ingredient}</li>
+          <li id="item3">{Add Ingredient}</li>
+          <li id="item4">{Add Ingredient}</li>
+          <li id="item5">{Add Ingredient}</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="recipes">
+    <h2>Recipes:</h2>
+    <div class="recipe-card">
+      <img id="food-img1" src="" alt="">
+      <div class="details">
+        <p class="detail-field" id="name1">{Name}</p>
+        <p class="detail-field" id="time1">{Time}</p>
+        <p class="detail-field" id="calories1">{Calories}</p>
+        <p class="detail-field" id="fats1">{Fats}</p>
+        <p class="detail-field" id="link1">{Link}</p>
+      </div>
+
+    </div>
+    <div class="recipe-card">
+      <img id="food-img2" src="" alt="">
+      <div class="details">
+        <p class="detail-field" id="name2">{Name}</p>
+        <p class="detail-field" id="time2">{Time}</p>
+        <p class="detail-field" id="calories2">{Calories}</p>
+        <p class="detail-field" id="fats2">{Fats}</p>
+        <p class="detail-field" id="link2">{Link}</p>
+      </div>
+    </div>
+    <div class="recipe-card">
+      <img id="food-img3" src="" alt="">
+      <div class="details">
+        <p class="detail-field" id="name3">{Name}</p>
+        <p class="detail-field" id="time3">{Time}</p>
+        <p class="detail-field" id="calories3">{Calories}</p>
+        <p class="detail-field" id="fats3">{Fats}</p>
+        <p class="detail-field" id="link3">{Link}</p>
+      </div>
+    </div>
+    <div class="recipe-card">
+      <img id="food-img4" src="" alt="">
+      <div class="details">
+        <p class="detail-field" id="name4">{Name}</p>
+        <p class="detail-field" id="time4">{Time}</p>
+        <p class="detail-field" id="calories4">{Calories}</p>
+        <p class="detail-field" id="fats4">{Fats}</p>
+        <p class="detail-field" id="link4">{Link}</p>
+      </div>
+    </div>
+    <div class="recipe-card">
+      <img id="food-img5" src="" alt="">
+      <div class="details">
+        <p class="detail-field" id="name5">{Name}</p>
+        <p class="detail-field" id="time5">{Time}</p>
+        <p class="detail-field" id="calories5">{Calories}</p>
+        <p class="detail-field" id="fats5">{Fats}</p>
+        <p class="detail-field" id="link5">{Link}</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
